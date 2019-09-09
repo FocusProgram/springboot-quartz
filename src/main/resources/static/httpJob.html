@@ -60,21 +60,21 @@
         <el-table ref="dataTable" :data="tableData" style="width:100%" border>
             <el-table-column prop="jobName" label="任务名称" sortable width="120"></el-table-column>
             <el-table-column prop="jobGroup" label="任务所在组" sortable width="120"></el-table-column>
-            <el-table-column prop="jobStatusInfo" label="任务状态" sortable width="120">
+            <el-table-column prop="jobStatusInfo" label="任务状态" sortable width="132">
                 <template scope="scope">
                     <span v-if="scope.row.jobStatusInfo == 'NORMAL'" style="font-weight:bold; color: green">{{scope.row.jobStatusInfo}}</span>
                     <span v-else style="font-weight:bold; color: red">{{scope.row.jobStatusInfo}}</span>
                 </template>
             </el-table-column>
-            <el-table-column prop="description" label="任务描述" sortable width="120"></el-table-column>
-            <el-table-column prop="requestType" label="请求类型" sortable width="120"></el-table-column>
+            <el-table-column prop="description" label="任务描述" sortable width="140"></el-table-column>
+            <el-table-column prop="requestType" label="请求类型" sortable width="140"></el-table-column>
             <el-table-column prop="httpUrl" label="请求URL" sortable width="300"></el-table-column>
 <!--            <el-table-column prop="httpParams" label="请求参数" sortable  width="300"></el-table-column>-->
             <el-table-column prop="createTime" label="创建时间" sortable width="160"></el-table-column>
             <el-table-column prop="cronExpression" label="Cron表达式" sortable width="170"></el-table-column>
             <el-table-column prop="nextFireTime" label="下次运行时间" sortable width="170"></el-table-column>
 
-            <el-table-column label="操作" width="400">
+            <el-table-column label="操作" width="450">
                 <template scope="scope">
                     <el-button size="small" type="primary"><a :href="`./httpJobLog.html?jobName=${encodeURI(scope.row.jobName)}&jobGroup=${encodeURI(scope.row.jobGroup)}`"
                             target="_self">执行记录</a>
