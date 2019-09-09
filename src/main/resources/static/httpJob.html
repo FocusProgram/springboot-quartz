@@ -43,7 +43,7 @@
 <body>
 <div id="httpJob">
 
-    <div id="top">
+    <div id="top" style="background: #c0c4cc;">
         <el-button type="primary" size="small" round @click="addJob(true)">添加任务</el-button>
         <el-input type="search" v-model="search" placeholder="任务名称或任务组名称"
                   style="width: auto; margin-left:20px"></el-input>
@@ -52,7 +52,7 @@
             <a href="httpJobLog.html" target="_self" style="color:#fff;text-underline: none;">执行记录</a>
         </el-button>
         <el-button type="text" style="color:white;margin-right:100px">
-            <a href="historyHttpJob.html" target="_blank" style="color:#fff;text-underline: none;">历史任务</a>
+            <a href="historyHttpJob.html" target="_self" style="color:#fff;text-underline: none;">历史任务</a>
         </el-button>
     </div>
 
@@ -68,8 +68,8 @@
             </el-table-column>
             <el-table-column prop="description" label="任务描述" sortable width="120"></el-table-column>
             <el-table-column prop="requestType" label="请求类型" sortable width="120"></el-table-column>
-            <el-table-column prop="httpUrl" label="请求URL" sortable width="480"></el-table-column>
-            <el-table-column prop="httpParams" label="请求参数" sortable  width="300"></el-table-column>
+            <el-table-column prop="httpUrl" label="请求URL" sortable width="300"></el-table-column>
+<!--            <el-table-column prop="httpParams" label="请求参数" sortable  width="300"></el-table-column>-->
             <el-table-column prop="createTime" label="创建时间" sortable width="160"></el-table-column>
             <el-table-column prop="cronExpression" label="Cron表达式" sortable width="170"></el-table-column>
             <el-table-column prop="nextFireTime" label="下次运行时间" sortable width="170"></el-table-column>

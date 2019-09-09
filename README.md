@@ -65,9 +65,10 @@
 ### demo  
 
   HTTP请求任务管理  
-
-
-  HTTP请求任务添加  
-
+  ![](https://raw.githubusercontent.com/FocusProgram/PicGo/master/image/20190909172137.png)  
 
   HTTP请求任务执行记录  
+  ![](https://raw.githubusercontent.com/FocusProgram/PicGo/master/image/20190909172248.png)
+  
+  HTTP请求任务添加  
+  ![](https://raw.githubusercontent.com/FocusProgram/PicGo/master/image/20190909172218.png)

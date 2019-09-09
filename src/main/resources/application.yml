@@ -1,8 +1,8 @@
+server:
+  port: 8080
 mybatis:
   mapper-locations: classpath*:mappings/*.xml
   type-aliases-package: com.example.quartz.model
-server:
-  port: 8080
 spring:
   datasource:
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
@@ -24,7 +24,6 @@ spring:
     username: root
     password: root
     validationQuery: SELECT 1 FROM DUAL
-#UTF-8字符过滤
   http:
     encoding:
       charset: UTF-8
