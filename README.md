@@ -21,10 +21,40 @@
 ### 组件版本  
 
 ```
-1、quartz 2.2.3  
+1、quartz 2.2.3
+<dependency>
+    <groupId>org.quartz-scheduler</groupId>
+    <artifactId>quartz</artifactId>
+    <version>2.2.3</version>
+</dependency>
+<dependency>
+    <groupId>org.quartz-scheduler</groupId>
+    <artifactId>quartz-jobs</artifactId>
+    <version>2.2.3</version>
+</dependency>
+
 2、springboot 2.1.0
+<parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.1.0.RELEASE</version>
+    <relativePath/>
+</parent>
+
 3、jdbc 5.1.46
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>5.1.46</version>
+    <scope>runtime</scope>
+</dependency>
+
 4、httpclient 4.5.6
+<dependency>
+    <groupId>org.apache.httpcomponents</groupId>
+    <artifactId>httpclient</artifactId>
+    <version>4.5.6</version>
+</dependency>
 ```
 
 ### 注意事项  
