@@ -15,7 +15,7 @@ public class JenkinsController {
 
     @GetMapping("/trigger")
     public Boolean trigger(){
-        //测试构建
+        //push构建jenkins
         return true;
     }
 }
