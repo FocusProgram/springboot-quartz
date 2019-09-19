@@ -120,7 +120,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <dockerHost>http://192.168.80.130:2375</dockerHost> <!--docker地址-->
+                    <dockerHost>http://192.168.80.80:2375</dockerHost> <!--docker地址-->
                     <imageName>${docker.image.prefix}/${project.artifactId}</imageName> <!--镜像名只能是小写，此处为dockerdemo/dockerdemo-->
                     <!--                    <imageTags>-->
                     <!--                        <imageTag>${project.version}</imageTag>-->
