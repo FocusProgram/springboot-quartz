@@ -20,6 +20,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+        <docker.image.prefix>quartz</docker.image.prefix>
     </properties>
 
     <dependencies>
@@ -104,6 +105,36 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>1.2.0</version>
+                <executions>
+                    <execution>
+                        <id>build-image</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <dockerHost>http://192.168.80.130:2375</dockerHost> <!--docker地址-->
+                    <imageName>${docker.image.prefix}/${project.artifactId}</imageName> <!--镜像名只能是小写，此处为dockerdemo/dockerdemo-->
+                    <!--                    <imageTags>-->
+                    <!--                        <imageTag>${project.version}</imageTag>-->
+                    <!--                    </imageTags>-->
+                    <!--                    <forceTags>true</forceTags>-->
+                    <dockerDirectory>src/main/docker</dockerDirectory> <!--Dockerfile的位置-->
+                    <resources>
+                        <resource>
+                            <targetPath>/</targetPath>
+                            <directory>${project.build.directory}</directory>
+                            <include>${project.build.finalName}.jar</include>
+                        </resource>
+                    </resources>
+                </configuration>
             </plugin>
         </plugins>
     </build>
