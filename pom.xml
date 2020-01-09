@@ -110,7 +110,7 @@
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>1.2.0</version>
-                <executions>
+<!--                 <executions>
                     <execution>
                         <id>build-image</id>
                         <phase>package</phase>
@@ -118,7 +118,7 @@
                             <goal>build</goal>
                         </goals>
                     </execution>
-                </executions>
+                </executions> -->
                 <configuration>
                     <dockerHost>http://114.55.34.44:2375</dockerHost> <!--docker地址-->
                     <imageName>${docker.image.prefix}/${project.artifactId}</imageName> <!--镜像名只能是小写，此处为dockerdemo/dockerdemo-->
