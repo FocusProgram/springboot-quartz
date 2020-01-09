@@ -22,7 +22,7 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     url: jdbc:mysql://114.55.34.44/quartz?useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
-    password: root
+    password: 159357
     validationQuery: SELECT 1 FROM DUAL
   http:
     encoding:
