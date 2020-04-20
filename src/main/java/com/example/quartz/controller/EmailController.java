@@ -134,7 +134,7 @@ public class EmailController {
             Transport transport = session.getTransport();
 
             // 连接邮件服务器，“”中填写邮件服务器主机名
-            transport.connect("smtp.qq.com", 465, username, password);
+            transport.connect("smtp.qq.com", 587, username, password);
             transport.sendMessage(message, new Address[]{new InternetAddress(to)});
             transport.close();
             return true;
