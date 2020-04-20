@@ -25,7 +25,7 @@ cd $workDir/docker-compose-quartz
 
 chmod +x chown.sh && ./chown.sh && cd $workDir
 
-mvn clean install
+mvn clean install -Dmaven.test.skip=true
 
 cd $workDir
 
