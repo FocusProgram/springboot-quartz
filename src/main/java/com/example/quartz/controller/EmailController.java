@@ -80,7 +80,7 @@ public class EmailController {
         DateFormat format = DateFormat.getDateInstance(DateFormat.FULL, Locale.CHINA);
         String currentData = format.format(new Date());
         emailMsg = emailMsg.replace("sendData", currentData);
-        emailMsg = emailMsg.replace("ReminderContent", "宝宝大姨妈快来了，不要吃辣的、冷的、生的、鲜的，要注意休息，不要生气，生气对身体不好。");
+        emailMsg = emailMsg.replace("ReminderContent", "宝宝大姨妈快来了，不要吃辣的、冷的、生的、鲜的，要注意休息，不要生气，生气对身体不好(*^▽^*)");
         return send(emailMsg);
     }
 
