@@ -21,6 +21,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <docker.image.prefix>quartz</docker.image.prefix>
+        <javax.mail.version>1.6.0</javax.mail.version>
     </properties>
 
     <dependencies>
@@ -38,6 +39,11 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context-support</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
 
         <dependency>
@@ -98,6 +104,12 @@
             <artifactId>druid</artifactId>
             <version>1.1.9</version>
         </dependency>
+
+        <dependency>
+        <groupId>com.sun.mail</groupId>
+        <artifactId>javax.mail</artifactId>
+        <version>${javax.mail.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -106,11 +118,12 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <!--Docker打包-->
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>1.2.0</version>
-<!--                 <executions>
+                <executions>
                     <execution>
                         <id>build-image</id>
                         <phase>package</phase>
@@ -118,15 +131,25 @@
                             <goal>build</goal>
                         </goals>
                     </execution>
-                </executions> -->
+                </executions>
                 <configuration>
-                    <dockerHost>http://114.55.34.44:2375</dockerHost> <!--docker地址-->
-                    <imageName>${docker.image.prefix}/${project.artifactId}</imageName> <!--镜像名只能是小写，此处为dockerdemo/dockerdemo-->
+                    <!--                    <dockerHost>http://47.52.145.91:2375</dockerHost>-->
+                    <!--                    <imageName>${project.artifactId}</imageName>-->
                     <!--                    <imageTags>-->
                     <!--                        <imageTag>${project.version}</imageTag>-->
+                    <!--                        <imageTag>latest</imageTag>-->
                     <!--                    </imageTags>-->
-                    <!--                    <forceTags>true</forceTags>-->
-                    <dockerDirectory>src/main/docker</dockerDirectory> <!--Dockerfile的位置-->
+                    <!--                    <dockerDirectory>src/main/docker</dockerDirectory>-->
+                    <!--                    <resources>-->
+                    <!--                        <resource>-->
+                    <!--                            <targetPath>/</targetPath>-->
+                    <!--                            <directory>${project.build.directory}</directory>-->
+                    <!--                            <include>${project.build.finalName}.jar</include>-->
+                    <!--                        </resource>-->
+                    <!--                    </resources>-->
+                    <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+                    <!-- 上下文路径配置，此处设置为项目根路径 用来读取Dockerfile-->
+                    <dockerDirectory>src/main/docker</dockerDirectory>
                     <resources>
                         <resource>
                             <targetPath>/</targetPath>
@@ -134,6 +157,9 @@
                             <include>${project.build.finalName}.jar</include>
                         </resource>
                     </resources>
+                    <buildArgs>
+                        <ARTIFACT>${project.build.finalName}.${project.packaging}</ARTIFACT>
+                    </buildArgs>
                 </configuration>
             </plugin>
         </plugins>
