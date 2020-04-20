@@ -65,10 +65,10 @@
 ### demo  
 
   HTTP请求任务管理  
-  ![](https://raw.githubusercontent.com/FocusProgram/PicGo/master/image/20190909172137.png)  
+  ![](https://gitee.com/FocusProgram/PicGo/raw/master/20190909172137.png)  
 
   HTTP请求任务执行记录  
-  ![](https://raw.githubusercontent.com/FocusProgram/PicGo/master/image/20190909172248.png)
+  ![](https://gitee.com/FocusProgram/PicGo/raw/master/20190909172248.png)
   
   HTTP请求任务添加  
-  ![](https://raw.githubusercontent.com/FocusProgram/PicGo/master/image/20190909172218.png)
+  ![](https://gitee.com/FocusProgram/PicGo/raw/master/20190909172218.png)
