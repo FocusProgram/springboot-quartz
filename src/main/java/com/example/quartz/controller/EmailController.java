@@ -62,7 +62,7 @@ public class EmailController {
         DateFormat format = DateFormat.getDateInstance(DateFormat.FULL, Locale.CHINA);
         String currentData = format.format(new Date());
         emailMsg = emailMsg.replace("sendData", currentData);
-        emailMsg.replace("ReminderContent", "今天是宝宝敷普通面膜的日子，不要忘记了哦，洗完澡后记得敷哦，爱你ლ(°◕‵ƹ′◕ლ)");
+        emailMsg = emailMsg.replace("ReminderContent", "今天是宝宝敷普通面膜的日子，不要忘记了哦，洗完澡后记得敷哦，爱你ლ(°◕‵ƹ′◕ლ)");
         return send(emailMsg);
     }
 
@@ -71,7 +71,7 @@ public class EmailController {
         DateFormat format = DateFormat.getDateInstance(DateFormat.FULL, Locale.CHINA);
         String currentData = format.format(new Date());
         emailMsg = emailMsg.replace("sendData", currentData);
-        emailMsg.replace("ReminderContent", "今天是宝宝敷清洁面膜的日子，不要忘记了哦，洗完澡后记得敷哦，爱你ლ(°◕‵ƹ′◕ლ)");
+        emailMsg = emailMsg.replace("ReminderContent", "今天是宝宝敷清洁面膜的日子，不要忘记了哦，洗完澡后记得敷哦，爱你ლ(°◕‵ƹ′◕ლ)");
         return send(emailMsg);
     }
 
@@ -80,7 +80,7 @@ public class EmailController {
         DateFormat format = DateFormat.getDateInstance(DateFormat.FULL, Locale.CHINA);
         String currentData = format.format(new Date());
         emailMsg = emailMsg.replace("sendData", currentData);
-        emailMsg.replace("ReminderContent", "");
+        emailMsg = emailMsg.replace("ReminderContent", "");
         return send(emailMsg);
     }
 
