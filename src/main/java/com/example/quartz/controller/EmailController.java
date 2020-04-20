@@ -102,7 +102,7 @@ public class EmailController {
          * mail.smtp.host ：指定连接的邮件服务器的主机名。如：163邮箱就填写smtp.163.com
          * 若在本地测试的话，需要在本地安装smtp服务器
          */
-        properties.setProperty("mail.smtp.host", "smtp.exmail.qq.com");
+        properties.setProperty("mail.smtp.host", "smtp.qq.com");
 
         // mail.smtp.auth：指定客户端是否要向邮件服务器提交验证
         properties.setProperty("mail.smtp.auth", "true");
@@ -134,7 +134,7 @@ public class EmailController {
             Transport transport = session.getTransport();
 
             // 连接邮件服务器，“”中填写邮件服务器主机名
-            transport.connect("smtp.exmail.qq.com", 25, username, password);
+            transport.connect("smtp.qq.com", 465, username, password);
             transport.sendMessage(message, new Address[]{new InternetAddress(to)});
             transport.close();
             return true;
