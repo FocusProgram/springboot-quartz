@@ -58,30 +58,30 @@ public class EmailController {
             "</html>\n";
 
     @RequestMapping("sendTwoDay")
-    public void sendTwoDay() {
+    public boolean sendTwoDay() {
         DateFormat format = DateFormat.getDateInstance(DateFormat.FULL, Locale.CHINA);
         String currentData = format.format(new Date());
         emailMsg = emailMsg.replace("sendData", currentData);
-        emailMsg.replace("ReminderContent","今天是宝宝敷普通面膜的日子，不要忘记了哦，洗完澡后记得敷哦，爱你ლ(°◕‵ƹ′◕ლ)");
-        send(emailMsg);
+        emailMsg.replace("ReminderContent", "今天是宝宝敷普通面膜的日子，不要忘记了哦，洗完澡后记得敷哦，爱你ლ(°◕‵ƹ′◕ლ)");
+        return send(emailMsg);
     }
 
     @RequestMapping("sendTenDay")
-    public void sendTenDay() {
+    public boolean sendTenDay() {
         DateFormat format = DateFormat.getDateInstance(DateFormat.FULL, Locale.CHINA);
         String currentData = format.format(new Date());
         emailMsg = emailMsg.replace("sendData", currentData);
-        emailMsg.replace("ReminderContent","今天是宝宝敷清洁面膜的日子，不要忘记了哦，洗完澡后记得敷哦，爱你ლ(°◕‵ƹ′◕ლ)");
-        send(emailMsg);
+        emailMsg.replace("ReminderContent", "今天是宝宝敷清洁面膜的日子，不要忘记了哦，洗完澡后记得敷哦，爱你ლ(°◕‵ƹ′◕ლ)");
+        return send(emailMsg);
     }
 
     @RequestMapping("sendMouth")
-    public void sendMouth() {
+    public boolean sendMouth() {
         DateFormat format = DateFormat.getDateInstance(DateFormat.FULL, Locale.CHINA);
         String currentData = format.format(new Date());
         emailMsg = emailMsg.replace("sendData", currentData);
-        emailMsg.replace("ReminderContent","");
-        send(emailMsg);
+        emailMsg.replace("ReminderContent", "");
+        return send(emailMsg);
     }
 
     private boolean send(String emailMsg) {
@@ -102,7 +102,7 @@ public class EmailController {
          * mail.smtp.host ：指定连接的邮件服务器的主机名。如：163邮箱就填写smtp.163.com
          * 若在本地测试的话，需要在本地安装smtp服务器
          */
-        properties.setProperty("mail.smtp.host", "smtp.qq.com");
+        properties.setProperty("mail.smtp.host", "smtp.exmail.qq.com");
 
         // mail.smtp.auth：指定客户端是否要向邮件服务器提交验证
         properties.setProperty("mail.smtp.auth", "true");
@@ -134,7 +134,7 @@ public class EmailController {
             Transport transport = session.getTransport();
 
             // 连接邮件服务器，“”中填写邮件服务器主机名
-            transport.connect("smtp.qq.com", 25, username, password);
+            transport.connect("smtp.exmail.qq.com", 25, username, password);
             transport.sendMessage(message, new Address[]{new InternetAddress(to)});
             transport.close();
             return true;
