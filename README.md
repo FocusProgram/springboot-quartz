@@ -15,7 +15,7 @@
 ```
 1、执行sql目录下的create_table.sql文件，建立quartz以及httpjob需要的数据库表  
 2、修改application.properties中的数据库连接方式
-3、访问[http://localhost:8080/httpJob.html](http://localhost:8080/httpJob.html)可通过web界面进行httpjob管理
+3、访问![http://localhost:8080/httpJob.html](http://localhost:8080/httpJob.html)可通过web界面进行httpjob管理
 ```
 
 ### 组件版本  
