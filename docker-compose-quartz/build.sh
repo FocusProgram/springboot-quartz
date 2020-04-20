@@ -27,7 +27,7 @@ chmod +x chown.sh && ./chown.sh && cd $workDir
 
 mvn clean install
 
-cd $workDir/$sp
+cd $workDir
 
 mvn docker:build
 
