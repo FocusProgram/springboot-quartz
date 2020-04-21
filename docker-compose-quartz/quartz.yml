@@ -6,6 +6,7 @@ services:
     container_name: quartz
     volumes:
       - /etc/localtime:/etc/localtime
+      - /etc/timezone:/etc/timezone
     ports:
       - 5000:5000
     networks:
