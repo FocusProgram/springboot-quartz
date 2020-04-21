@@ -84,6 +84,24 @@ public class EmailController {
         return send(emailMsg);
     }
 
+    @RequestMapping("sendPassword")
+    public boolean sendPassword() {
+        DateFormat format = DateFormat.getDateInstance(DateFormat.FULL, Locale.CHINA);
+        String currentData = format.format(new Date());
+        emailMsg = emailMsg.replace("sendData", currentData);
+        emailMsg = emailMsg.replace("ReminderContent", "记得给家长老板发密码哦，千万别忘了");
+        return send(emailMsg);
+    }
+
+    @RequestMapping("sendSummary")
+    public boolean sendSummary() {
+        DateFormat format = DateFormat.getDateInstance(DateFormat.FULL, Locale.CHINA);
+        String currentData = format.format(new Date());
+        emailMsg = emailMsg.replace("sendData", currentData);
+        emailMsg = emailMsg.replace("ReminderContent", "记得给家长作业和总结，千万别忘了");
+        return send(emailMsg);
+    }
+
     private boolean send(String emailMsg) {
 
         // 谁发送(发送方)
