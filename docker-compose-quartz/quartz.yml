@@ -4,6 +4,8 @@ services:
     image: quartz/quartz
     hostname: quartz
     container_name: quartz
+    volumes:
+      - /etc/localtime:/etc/localtime
     ports:
       - 5000:5000
     networks:
