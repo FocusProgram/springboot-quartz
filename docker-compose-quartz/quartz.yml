@@ -4,6 +4,7 @@ services:
     image: quartz/quartz
     hostname: quartz
     container_name: quartz
+    # 指定时区时间，与系统时间时区一致
     volumes:
       - /etc/localtime:/etc/localtime
       - /etc/timezone:/etc/timezone
