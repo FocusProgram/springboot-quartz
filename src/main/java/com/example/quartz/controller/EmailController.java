@@ -108,7 +108,7 @@ public class EmailController {
         String from = "1031652818@qq.com";
 
         // 发给谁
-        String to = "654787651@qq.com";
+        String to = "1031652818@qq.com";
 
         // 发送者的用户名和密码(邮箱登录用)
         final String username = "1031652818@qq.com"; // 此处填写发送的邮箱名
